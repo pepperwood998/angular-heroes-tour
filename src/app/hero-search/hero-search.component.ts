@@ -22,6 +22,7 @@ export class HeroSearchComponent implements OnInit {
 
       // switch to new search term when term changed
       // call the search service for terms that make it through the above 2 filters
+      // discard all previous search obervables
       switchMap((term: string) => this.heroService.searchHeroes(term))
     );
   }
